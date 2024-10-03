@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		150F77A02C1738EA00045990 /* NatureWalk_Group7App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F779F2C1738EA00045990 /* NatureWalk_Group7App.swift */; };
+		150F77A22C1738EA00045990 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F77A12C1738EA00045990 /* ContentView.swift */; };
+		150F77A42C1738EB00045990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150F77A32C1738EB00045990 /* Assets.xcassets */; };
+		150F77A72C1738EB00045990 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150F77A62C1738EB00045990 /* Preview Assets.xcassets */; };
+		150F77B12C1738EB00045990 /* NatureWalk_Group7Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F77B02C1738EB00045990 /* NatureWalk_Group7Tests.swift */; };
+		150F77BB2C1738EB00045990 /* NatureWalk_Group7UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F77BA2C1738EB00045990 /* NatureWalk_Group7UITests.swift */; };
+		150F77BD2C1738EB00045990 /* NatureWalk_Group13UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F77BC2C1738EB00045990 /* NatureWalk_Group13UITestsLaunchTests.swift */; };
+		886718632C3B03CA00132DDA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886718622C3B03CA00132DDA /* Models.swift */; };
+		886718652C3B03F900132DDA /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886718642C3B03F900132DDA /* AppViewModel.swift */; };
+		886718672C3B044300132DDA /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886718662C3B044300132DDA /* SessionListView.swift */; };
+		886718692C3B04BC00132DDA /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886718682C3B04BC00132DDA /* SessionDetailView.swift */; };
+		886718722C3BA76000132DDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 886718712C3BA76000132DDA /* FirebaseAuth */; };
+		886718742C3BA76000132DDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 886718732C3BA76000132DDA /* FirebaseFirestore */; };
+		886718762C3BA76000132DDA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 886718752C3BA76000132DDA /* FirebaseFirestoreSwift */; };
+		886718782C3BA76000132DDA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 886718772C3BA76000132DDA /* FirebaseStorage */; };
+		886719622C3F115600132DDA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886719612C3F115600132DDA /* ProfileView.swift */; };
+		886719682C40927C00132DDA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886719672C40927C00132DDA /* MainTabView.swift */; };
+		C31085492C40504700775253 /* PurchasedTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31085482C40504700775253 /* PurchasedTicketsView.swift */; };
+		C37D9BB32C41AC3D00742863 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D9BB22C41AC3D00742863 /* MapView.swift */; };
+		C3870EB32C3FAA120097527D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3870EB22C3FAA120097527D /* GoogleService-Info.plist */; };
+		D979D0432CAF34C60018C0CE /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D979D0422CAF34C60018C0CE /* FavoritesListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		150F77AD2C1738EB00045990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 150F77942C1738EA00045990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 150F779B2C1738EA00045990;
+			remoteInfo = NatureWalk_Group13;
+		};
+		150F77B72C1738EB00045990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 150F77942C1738EA00045990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 150F779B2C1738EA00045990;
+			remoteInfo = NatureWalk_Group13;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		150F779C2C1738EA00045990 /* NatureWalk_Group7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatureWalk_Group7.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		150F779F2C1738EA00045990 /* NatureWalk_Group7App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureWalk_Group7App.swift; sourceTree = "<group>"; };
+		150F77A12C1738EA00045990 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		150F77A32C1738EB00045990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		150F77A62C1738EB00045990 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		150F77AC2C1738EB00045990 /* NatureWalk_Group7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NatureWalk_Group7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		150F77B02C1738EB00045990 /* NatureWalk_Group7Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureWalk_Group7Tests.swift; sourceTree = "<group>"; };
+		150F77B62C1738EB00045990 /* NatureWalk_Group7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NatureWalk_Group7UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		150F77BA2C1738EB00045990 /* NatureWalk_Group7UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureWalk_Group7UITests.swift; sourceTree = "<group>"; };
+		150F77BC2C1738EB00045990 /* NatureWalk_Group13UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureWalk_Group13UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		886718622C3B03CA00132DDA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		886718642C3B03F900132DDA /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		886718662C3B044300132DDA /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
+		886718682C3B04BC00132DDA /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		886719612C3F115600132DDA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		886719672C40927C00132DDA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C31085482C40504700775253 /* PurchasedTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedTicketsView.swift; sourceTree = "<group>"; };
+		C37D9BB22C41AC3D00742863 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C3870EB22C3FAA120097527D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D979D0422CAF34C60018C0CE /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		150F77992C1738EA00045990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886718722C3BA76000132DDA /* FirebaseAuth in Frameworks */,
+				886718782C3BA76000132DDA /* FirebaseStorage in Frameworks */,
+				886718742C3BA76000132DDA /* FirebaseFirestore in Frameworks */,
+				886718762C3BA76000132DDA /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77A92C1738EB00045990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77B32C1738EB00045990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		150F77932C1738EA00045990 = {
+			isa = PBXGroup;
+			children = (
+				886718792C3CE42800132DDA /* Authentication */,
+				150F779E2C1738EA00045990 /* NatureWalk_Group7 */,
+				150F77AF2C1738EB00045990 /* NatureWalk_Group7Tests */,
+				150F77B92C1738EB00045990 /* NatureWalk_Group7UITests */,
+				150F779D2C1738EA00045990 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		150F779D2C1738EA00045990 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				150F779C2C1738EA00045990 /* NatureWalk_Group7.app */,
+				150F77AC2C1738EB00045990 /* NatureWalk_Group7Tests.xctest */,
+				150F77B62C1738EB00045990 /* NatureWalk_Group7UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		150F779E2C1738EA00045990 /* NatureWalk_Group7 */ = {
+			isa = PBXGroup;
+			children = (
+				150F779F2C1738EA00045990 /* NatureWalk_Group7App.swift */,
+				150F77A32C1738EB00045990 /* Assets.xcassets */,
+				C3870EB22C3FAA120097527D /* GoogleService-Info.plist */,
+				150F77A52C1738EB00045990 /* Preview Content */,
+				886718622C3B03CA00132DDA /* Models.swift */,
+				886718642C3B03F900132DDA /* AppViewModel.swift */,
+				886718662C3B044300132DDA /* SessionListView.swift */,
+				886718682C3B04BC00132DDA /* SessionDetailView.swift */,
+				886719612C3F115600132DDA /* ProfileView.swift */,
+				C31085482C40504700775253 /* PurchasedTicketsView.swift */,
+				886719672C40927C00132DDA /* MainTabView.swift */,
+				C37D9BB22C41AC3D00742863 /* MapView.swift */,
+				D979D0422CAF34C60018C0CE /* FavoritesListView.swift */,
+			);
+			path = NatureWalk_Group7;
+			sourceTree = "<group>";
+		};
+		150F77A52C1738EB00045990 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				150F77A62C1738EB00045990 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		150F77AF2C1738EB00045990 /* NatureWalk_Group7Tests */ = {
+			isa = PBXGroup;
+			children = (
+				150F77B02C1738EB00045990 /* NatureWalk_Group7Tests.swift */,
+			);
+			path = NatureWalk_Group7Tests;
+			sourceTree = "<group>";
+		};
+		150F77B92C1738EB00045990 /* NatureWalk_Group7UITests */ = {
+			isa = PBXGroup;
+			children = (
+				150F77BA2C1738EB00045990 /* NatureWalk_Group7UITests.swift */,
+				150F77BC2C1738EB00045990 /* NatureWalk_Group13UITestsLaunchTests.swift */,
+			);
+			path = NatureWalk_Group7UITests;
+			sourceTree = "<group>";
+		};
+		886718792C3CE42800132DDA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				150F77A12C1738EA00045990 /* ContentView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		150F779B2C1738EA00045990 /* NatureWalk_Group7 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 150F77C02C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7" */;
+			buildPhases = (
+				150F77982C1738EA00045990 /* Sources */,
+				150F77992C1738EA00045990 /* Frameworks */,
+				150F779A2C1738EA00045990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NatureWalk_Group7;
+			packageProductDependencies = (
+				886718712C3BA76000132DDA /* FirebaseAuth */,
+				886718732C3BA76000132DDA /* FirebaseFirestore */,
+				886718752C3BA76000132DDA /* FirebaseFirestoreSwift */,
+				886718772C3BA76000132DDA /* FirebaseStorage */,
+			);
+			productName = NatureWalk_Group13;
+			productReference = 150F779C2C1738EA00045990 /* NatureWalk_Group7.app */;
+			productType = "com.apple.product-type.application";
+		};
+		150F77AB2C1738EB00045990 /* NatureWalk_Group7Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 150F77C32C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7Tests" */;
+			buildPhases = (
+				150F77A82C1738EB00045990 /* Sources */,
+				150F77A92C1738EB00045990 /* Frameworks */,
+				150F77AA2C1738EB00045990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				150F77AE2C1738EB00045990 /* PBXTargetDependency */,
+			);
+			name = NatureWalk_Group7Tests;
+			productName = NatureWalk_Group13Tests;
+			productReference = 150F77AC2C1738EB00045990 /* NatureWalk_Group7Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		150F77B52C1738EB00045990 /* NatureWalk_Group7UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 150F77C62C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7UITests" */;
+			buildPhases = (
+				150F77B22C1738EB00045990 /* Sources */,
+				150F77B32C1738EB00045990 /* Frameworks */,
+				150F77B42C1738EB00045990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				150F77B82C1738EB00045990 /* PBXTargetDependency */,
+			);
+			name = NatureWalk_Group7UITests;
+			productName = NatureWalk_Group13UITests;
+			productReference = 150F77B62C1738EB00045990 /* NatureWalk_Group7UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		150F77942C1738EA00045990 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					150F779B2C1738EA00045990 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					150F77AB2C1738EB00045990 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 150F779B2C1738EA00045990;
+					};
+					150F77B52C1738EB00045990 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 150F779B2C1738EA00045990;
+					};
+				};
+			};
+			buildConfigurationList = 150F77972C1738EA00045990 /* Build configuration list for PBXProject "NatureWalk_Group7" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 150F77932C1738EA00045990;
+			packageReferences = (
+				886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 150F779D2C1738EA00045990 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				150F779B2C1738EA00045990 /* NatureWalk_Group7 */,
+				150F77AB2C1738EB00045990 /* NatureWalk_Group7Tests */,
+				150F77B52C1738EB00045990 /* NatureWalk_Group7UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		150F779A2C1738EA00045990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				150F77A72C1738EB00045990 /* Preview Assets.xcassets in Resources */,
+				150F77A42C1738EB00045990 /* Assets.xcassets in Resources */,
+				C3870EB32C3FAA120097527D /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77AA2C1738EB00045990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77B42C1738EB00045990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		150F77982C1738EA00045990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886719622C3F115600132DDA /* ProfileView.swift in Sources */,
+				D979D0432CAF34C60018C0CE /* FavoritesListView.swift in Sources */,
+				886718632C3B03CA00132DDA /* Models.swift in Sources */,
+				150F77A22C1738EA00045990 /* ContentView.swift in Sources */,
+				C37D9BB32C41AC3D00742863 /* MapView.swift in Sources */,
+				886718652C3B03F900132DDA /* AppViewModel.swift in Sources */,
+				886718672C3B044300132DDA /* SessionListView.swift in Sources */,
+				886718692C3B04BC00132DDA /* SessionDetailView.swift in Sources */,
+				150F77A02C1738EA00045990 /* NatureWalk_Group7App.swift in Sources */,
+				C31085492C40504700775253 /* PurchasedTicketsView.swift in Sources */,
+				886719682C40927C00132DDA /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77A82C1738EB00045990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				150F77B12C1738EB00045990 /* NatureWalk_Group7Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		150F77B22C1738EB00045990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				150F77BD2C1738EB00045990 /* NatureWalk_Group13UITestsLaunchTests.swift in Sources */,
+				150F77BB2C1738EB00045990 /* NatureWalk_Group7UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		150F77AE2C1738EB00045990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 150F779B2C1738EA00045990 /* NatureWalk_Group7 */;
+			targetProxy = 150F77AD2C1738EB00045990 /* PBXContainerItemProxy */;
+		};
+		150F77B82C1738EB00045990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 150F779B2C1738EA00045990 /* NatureWalk_Group7 */;
+			targetProxy = 150F77B72C1738EB00045990 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		150F77BE2C1738EB00045990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		150F77BF2C1738EB00045990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		150F77C12C1738EB00045990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NatureWalk_Group7/Preview Content\"";
+				DEVELOPMENT_TEAM = Y267CLXMKT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group7";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		150F77C22C1738EB00045990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NatureWalk_Group7/Preview Content\"";
+				DEVELOPMENT_TEAM = Y267CLXMKT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group7";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		150F77C42C1738EB00045990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NPJNK776QJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group13Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NatureWalk_Group7.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NatureWalk_Group7";
+			};
+			name = Debug;
+		};
+		150F77C52C1738EB00045990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NPJNK776QJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group13Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NatureWalk_Group7.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NatureWalk_Group7";
+			};
+			name = Release;
+		};
+		150F77C72C1738EB00045990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NPJNK776QJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group13UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NatureWalk_Group13;
+			};
+			name = Debug;
+		};
+		150F77C82C1738EB00045990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NPJNK776QJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seungcheol.NatureWalk-Group13UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NatureWalk_Group13;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		150F77972C1738EA00045990 /* Build configuration list for PBXProject "NatureWalk_Group7" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				150F77BE2C1738EB00045990 /* Debug */,
+				150F77BF2C1738EB00045990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		150F77C02C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				150F77C12C1738EB00045990 /* Debug */,
+				150F77C22C1738EB00045990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		150F77C32C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				150F77C42C1738EB00045990 /* Debug */,
+				150F77C52C1738EB00045990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		150F77C62C1738EB00045990 /* Build configuration list for PBXNativeTarget "NatureWalk_Group7UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				150F77C72C1738EB00045990 /* Debug */,
+				150F77C82C1738EB00045990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		886718712C3BA76000132DDA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		886718732C3BA76000132DDA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		886718752C3BA76000132DDA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		886718772C3BA76000132DDA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886718702C3BA75F00132DDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 150F77942C1738EA00045990 /* Project object */;
+}
