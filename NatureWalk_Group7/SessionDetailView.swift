@@ -92,7 +92,7 @@ struct SessionDetailView: View {
                     Text("What to Expect")
                         .font(.headline)
                     
-                    Text(getWhatToExpectText(for: session.name))
+                    Text(session.name)
                         .font(.body)
                         .foregroundColor(.secondary)
                         .padding(.bottom)
@@ -191,16 +191,4 @@ struct SessionDetailView: View {
         viewModel.addPurchase(purchase: purchase)
     }
 
-    func getWhatToExpectText(for sessionName: String) -> String {
-        switch sessionName {
-        case "Morning Walk":
-            return "Start your day with a refreshing walk in the morning dew. Enjoy the sights and sounds of nature waking up, with a gentle pace suitable for all ages."
-        case "Evening Stroll":
-            return "Unwind with a peaceful evening stroll. The cool breeze and setting sun provide a perfect backdrop for relaxation and reflection."
-        case "Night Hike":
-            return "Experience the thrill of a night hike under the stars. With lanterns to light your path, explore the nocturnal wonders of the wilderness."
-        default:
-            return "Join us for a delightful nature walk. Our guide will lead you through scenic trails, where you can appreciate the beauty of the natural world."
-        }
-    }
 }
