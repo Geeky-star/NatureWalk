@@ -4,12 +4,41 @@ import SwiftUI
 struct SessionListView: View {
     @EnvironmentObject var viewModel: AppViewModel
     @State private var currentIndex = 0
+    @State private var searchQuery: String = ""
+
     
     let featuredImages = ["morning_walk1", "evening_stroll1", "night_hike"]
 
+    var filteredSessions: [Session] {
+        // Filter sessions based on the search query
+        if searchQuery.isEmpty {
+            return viewModel.sessions
+        } else {
+            return viewModel.sessions.filter { session in
+                session.name.lowercased().contains(searchQuery.lowercased())
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                
+                
+                // Custom Search Box
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                    
+                    TextField("Search sessions...", text: $searchQuery)
+                        .font(.body)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color(.systemGray6)) // Light gray background
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                
                 // Featured Sessions Carousel
                 TabView(selection: $currentIndex) {
                     ForEach(0..<featuredImages.count, id: \.self) { index in
@@ -54,12 +83,22 @@ struct SessionRowView: View {
     
     var body: some View {
         HStack(spacing: 15) {
-            Image(session.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .shadow(radius: 3)
+            if let imageUrl = URL(string: session.images[0]) {
+                AsyncImage(url: imageUrl) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 80, height: 80)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(radius: 3)
+                } placeholder: {
+                    // Placeholder while the image is loading
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 80, height: 80)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            }
             
             VStack(alignment: .leading, spacing: 8) {
                 Text(session.name)

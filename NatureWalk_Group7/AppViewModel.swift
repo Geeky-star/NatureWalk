@@ -19,11 +19,6 @@ class AppViewModel: ObservableObject {
         loadSessions()
         fetchFavoritesFromFirestore()
         
-        self.sessions = [
-            Session(name: "Morning Walk", price: 10.00, images: ["morning_walkk", "morning_walk2"], description: "Enjoy a refreshing morning walk", starRating: 4, guideName: "Franck Venance", guidePhoneNumber: "1234567890", imageName: "morninng-walk",address: "123 Morning Walk St, Ottawa, Canada"),
-            Session(name: "Evening Stroll", price: 15.00, images: ["evening_stroll1", "evening_stroll2"], description: "Relax with an evening stroll", starRating: 5, guideName: "Kris Paul", guidePhoneNumber: "0987654321", imageName: "eveninng-stroll",address: "456 Evening Stroll Blvd, Ottawa, Canada"),
-            Session(name: "Night Hike", price: 20.00, images: ["night_hike1", "night_hike2"], description: "Experience the thrill of a night hike", starRating: 3, guideName: "Lionnel Messi", guidePhoneNumber: "1122334455", imageName: "night_hike",address: "789 Night Hike Ave, Ottawa, Canada")
-        ]
         
         autoLogin()
     }
@@ -134,7 +129,7 @@ class AppViewModel: ObservableObject {
             // Add new favorites
             for session in self.favoriteSessions {
                 do {
-                    try userFavoritesRef.document(session.id.uuidString).setData(from: session)
+                    try userFavoritesRef.document(session.id).setData(from: session)
                 } catch {
                     print("Error saving favorite: \(error)")
                 }
@@ -211,6 +206,54 @@ class AppViewModel: ObservableObject {
     
     private func loadSessions() {
         // Load sessions from Firestore or hardcoded for now
+        let sessionsRef = db.collection("sessions")
+        
+        sessionsRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching sessions: \(error)")
+                return
+            }
+            
+            // Check if documents exist
+            guard let documents = snapshot?.documents else {
+                print("No sessions found")
+                return
+            }
+            
+            // Log the document data
+            for document in documents {
+                print("Document data: \(document.data())")
+            }
+            
+            // Decode the sessions from Firestore documents
+            self.sessions = documents.compactMap { document in
+                do {
+                    return try document.data(as: Session.self)
+                } catch {
+                    print("Error decoding session: \(error)")
+                    return nil
+                }
+            }
+            
+            print("Loaded sessions: \(self.sessions)")
+            
+            let sess = self.db.collection("sessions")
+
+            sess.getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    return
+                }
+                
+                let result = snapshot?.documents.compactMap { document in
+                    try? document.data(as: Session.self)
+                } ?? []
+                
+                // Corrected print statement
+                print("result - \(result)")
+            }
+
+        }
     }
     
     func addPurchase(purchase: Purchase) {

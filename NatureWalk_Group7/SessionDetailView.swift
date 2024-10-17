@@ -9,36 +9,44 @@ struct SessionDetailView: View {
     @State private var showMap = false
     let session: Session
     
-    let carouselImages: [String]
-    
     init(session: Session) {
         self.session = session
-        if session.name == "Evening Stroll" {
-            carouselImages = ["evenning-stroll", "evening_stroll2"]
-        } else if session.name == "Night Hike" {
-            carouselImages = ["nightt_hike1", "night_hike2"]
-        } else {
-            carouselImages = session.images
         }
-    }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Image Carousel
+              
                 TabView(selection: $currentIndex) {
-                    ForEach(0..<carouselImages.count, id: \.self) { index in
-                        Image(carouselImages[index])
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .tag(index)
+                    ForEach(0..<session.images.count, id: \.self) { index in
+                        AsyncImage(url: URL(string: session.images[index])) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView() // Show a loading indicator while image is loading
+                                    .frame(height: 250)
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 250)
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .shadow(radius: 5)
+                            case .failure:
+                                Image(systemName: "photo") // Fallback image if URL fails
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 250)
+                            @unknown default:
+                                Image(systemName: "exclamationmark.triangle")
+                                    .frame(height: 250)
+                            }
+                        }
+                        .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                 .frame(height: 250)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .shadow(radius: 5)
-                
                 VStack(alignment: .leading, spacing: 15) {
                     Text(session.name)
                         .font(.system(size: 28, weight: .bold))
@@ -179,7 +187,7 @@ struct SessionDetailView: View {
             // Handle case where currentUser is nil
             return
         }
-        let purchase = Purchase(sessionId: session.id.uuidString, userId: user.id.uuidString, sessionName: session.name, date: Date())
+        let purchase = Purchase(sessionId: session.id, userId: user.id.uuidString, sessionName: session.name, date: Date())
         viewModel.addPurchase(purchase: purchase)
     }
 
