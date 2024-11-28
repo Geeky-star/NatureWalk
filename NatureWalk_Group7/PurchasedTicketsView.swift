@@ -7,7 +7,8 @@ struct PurchasedTicketsView: View {
     var body: some View {
         VStack {
             Text("Purchased Tickets")
-                .font(.title)
+                .font(.title2)
+                .fontWeight(.semibold)
                 .padding(.top, 20)
             
             List(purchasedTickets) { purchase in
@@ -27,6 +28,7 @@ struct PurchasedTicketsView: View {
             }
         }
         .padding()
+        .navigationBarTitle("Purchased Tickets", displayMode: .inline)
     }
     
     private func formattedDate(from date: Date) -> String {
