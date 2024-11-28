@@ -1,8 +1,8 @@
-
 import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
+    @State private var username = "" // New username field
     @State private var email = ""
     @State private var password = ""
     @State private var rememberMe = false
@@ -20,6 +20,7 @@ struct ContentView: View {
                 }
             }
         }
+        .foregroundColor(.black)
     }
 
     var loginView: some View {
@@ -35,6 +36,12 @@ struct ContentView: View {
                 .scaledToFit()
                 .padding()
 
+            if isSignUp {
+                TextField("Username", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+            }
+
             TextField("Email", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)
@@ -48,9 +55,12 @@ struct ContentView: View {
 
             Button(action: {
                 if isSignUp {
-                    viewModel.signUp(email: email, password: password) { success, error in
+                    viewModel.signUp(email: email, password: password, username: username) { success, error in
                         if success {
                             isSignUp = false
+                            email = ""
+                            password = ""
+                            username = ""
                         } else {
                             alertMessage = error ?? "Sign up failed"
                             showAlert = true
@@ -62,13 +72,17 @@ struct ContentView: View {
                             alertMessage = error ?? "Login failed"
                             showAlert = true
                         }
+                        else{
+                            password = ""
+                            email = ""
+                        }
                     }
                 }
             }) {
                 Text(isSignUp ? "Sign Up" : "Login")
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
@@ -81,7 +95,7 @@ struct ContentView: View {
                 isSignUp.toggle()
             }) {
                 Text(isSignUp ? "Already have an account? Login" : "Don't have an account? Sign Up")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.black)
                     .padding(.top)
             }
         }
@@ -90,4 +104,5 @@ struct ContentView: View {
             viewModel.autoLogin()
         }
     }
+
 }

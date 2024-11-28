@@ -1,45 +1,75 @@
-
 import SwiftUI
 
 struct SessionListView: View {
     @EnvironmentObject var viewModel: AppViewModel
     @State private var currentIndex = 0
     @State private var searchQuery: String = ""
-
+    @State private var sortOption: SortOption = .none
     
     let featuredImages = ["morning_walk1", "evening_stroll1", "night_hike"]
 
-    var filteredSessions: [Session] {
-        // Filter sessions based on the search query
-        if searchQuery.isEmpty {
-            return viewModel.sessions
-        } else {
-            return viewModel.sessions.filter { session in
-                session.name.lowercased().contains(searchQuery.lowercased())
-            }
-        }
+    enum SortOption {
+        case none
+        case price
+        case rating
     }
     
+    var filteredSessions: [Session] {
+        let filtered = viewModel.sessions.filter { session in
+            searchQuery.isEmpty || session.name.lowercased().contains(searchQuery.lowercased())
+        }
+        
+        switch sortOption {
+        case .price:
+            return filtered.sorted { $0.price < $1.price }
+        case .rating:
+            return filtered.sorted { $0.starRating > $1.starRating }
+        case .none:
+            return filtered
+        }
+    }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
                 
+                Text("All Sessions")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding(.top, 20)
                 
-                // Custom Search Box
                 HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                    
-                    TextField("Search sessions...", text: $searchQuery)
-                        .font(.body)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .background(Color(.systemGray6)) // Light gray background
-                        .cornerRadius(10)
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                        
+                        TextField("Search sessions...", text: $searchQuery)
+                            .padding(5)
+                         
+                        Menu {
+                            Button(action: { sortOption = .price }) {
+                                Label("Sort by Price", systemImage: "dollarsign.circle")
+                            }
+                            Button(action: { sortOption = .rating }) {
+                                Label("Sort by Rating", systemImage: "star.fill")
+                            }
+                            Button(action: { sortOption = .none }) {
+                                Label("Clear Filters", systemImage: "xmark.circle")
+                            }
+                        } label: {
+                            Image(systemName: "line.horizontal.3.decrease.circle")
+                                .font(.title2)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .padding(.horizontal)
                 }
+                .padding(.vertical, 6)
                 .padding(.horizontal)
+                .background(Color(.systemGray6))
+                .cornerRadius(10)
                 
-                // Featured Sessions Carousel
+                // Featured images
                 TabView(selection: $currentIndex) {
                     ForEach(0..<featuredImages.count, id: \.self) { index in
                         Image(featuredImages[index])
@@ -55,15 +85,10 @@ struct SessionListView: View {
                 .cornerRadius(15)
                 .padding(.horizontal)
                 .shadow(radius: 5)
-                
-                // Session List
+          
+                // List of sessions
                 VStack(alignment: .leading, spacing: 15) {
-                    Text("Available Sessions")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(.horizontal)
-                    
-                    ForEach(viewModel.sessions) { session in
+                    ForEach(filteredSessions) { session in
                         NavigationLink(destination: SessionDetailView(session: session)) {
                             SessionRowView(session: session)
                         }
@@ -76,7 +101,6 @@ struct SessionListView: View {
     }
 }
 
-// SessionRowView
 
 struct SessionRowView: View {
     let session: Session
@@ -92,7 +116,6 @@ struct SessionRowView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .shadow(radius: 3)
                 } placeholder: {
-                    // Placeholder while the image is loading
                     Rectangle()
                         .fill(Color.gray.opacity(0.3))
                         .frame(width: 80, height: 80)

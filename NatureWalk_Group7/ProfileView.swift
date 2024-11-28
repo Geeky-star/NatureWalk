@@ -1,6 +1,5 @@
-
-
 import SwiftUI
+import Stripe
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AppViewModel
@@ -26,14 +25,6 @@ struct ProfileView: View {
                 }
             }
             
-            Section(header: Text("Payment Information")) {
-                HStack {
-                    Image(systemName: "creditcard.fill")
-                        .foregroundColor(.orange)
-                    TextField("Payment Information", text: $paymentInfo)
-                }
-            }
-            
             Section {
                 Button(action: {
                     saveProfile()
@@ -41,10 +32,23 @@ struct ProfileView: View {
                     Text("Save Profile")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
+                
+                Button(action: {
+                    viewModel.logout()
+                }) {
+                    Text("Log Out")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                
+                
             }
         }
         .navigationBarTitle("Profile", displayMode: .inline)
@@ -80,3 +84,10 @@ struct ProfileView: View {
         }
     }
 }
+
+
+
+
+
+
+

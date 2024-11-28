@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct MainTabView: View {
@@ -20,22 +19,30 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Purchases", systemImage: "ticket.fill")
                 }
+            
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.fill")
+                }
         }
-        .navigationBarItems(leading: profileButton, trailing: logoutButton)
-        .navigationBarTitle("Nature Walks", displayMode: .inline)
+        .accentColor(.black)
+        
     }
     
-    var profileButton: some View {
-        NavigationLink(destination: ProfileView()) {
-            Image(systemName: "person.crop.circle")
-        }
-    }
-    
-    var logoutButton: some View {
-        Button(action: {
-            viewModel.logout()
-        }) {
-            Image(systemName: "rectangle.portrait.and.arrow.right")
+    var menuButton: some View {
+        Menu {
+            NavigationLink(destination: ProfileView()) {
+                Label("Profile", systemImage: "person.crop.circle")
+            }
+            
+            Button(action: {
+                viewModel.logout()
+            }) {
+                Label("Logout", systemImage: "rectangle.portrait.and.arrow.right")
+            }
+        } label: {
+            Image(systemName: "ellipsis.circle")
+                .font(.title2)
         }
     }
 }

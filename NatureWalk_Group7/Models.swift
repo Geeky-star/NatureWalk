@@ -6,10 +6,12 @@ struct AppUser: Identifiable, Codable {
     var id = UUID()
     var email: String
     var password: String
-    var name: String?
+    var name: String? // New username field
     var contactDetails: String?
     var paymentInfo: String?
 }
+
+
 
 struct Session: Identifiable, Codable, Equatable {
     var id: String
@@ -32,14 +34,16 @@ struct Purchase: Identifiable, Codable {
     var userId: String
     var sessionName: String
     var date: Date
+    var amount: Double
 
     // Initialize id explicitly in initializer
-    init(id: String = UUID().uuidString, sessionId: String, userId: String, sessionName: String, date: Date) {
+    init(id: String = UUID().uuidString, sessionId: String, userId: String, sessionName: String, date: Date,amount:Double) {
         self.id = id
         self.sessionId = sessionId
         self.userId = userId
         self.sessionName = sessionName
         self.date = date
+        self.amount = amount 
     }
 }
 

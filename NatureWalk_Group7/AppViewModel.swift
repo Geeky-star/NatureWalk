@@ -72,7 +72,7 @@ class AppViewModel: ObservableObject {
             completion(false)
         }
     }
-    
+
     func fetchUserProfile() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         let userRef = db.collection("users").document(userId)
@@ -154,35 +154,43 @@ class AppViewModel: ObservableObject {
         }
     }
     
+    func signUp(email: String, password: String, username: String, completion: @escaping (Bool, String?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(false, error.localizedDescription)
+            } else {
+                let user = AppUser(email: email, password: password, name: username, contactDetails: nil, paymentInfo: nil)
+                self.saveUser(user: user)
+                self.saveUserProfile(user: user) { success in
+                    if success {
+                        self.fetchUserProfile()  // Fetch updated profile
+                        self.fetchFavoritesFromFirestore()
+                        completion(true, nil)
+                    } else {
+                        completion(false, "Failed to save user profile")
+                    }
+                }
+            }
+        }
+    }
+
     func login(email: String, password: String, rememberMe: Bool, completion: @escaping (Bool, String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 completion(false, error.localizedDescription)
             } else {
                 if rememberMe {
-                    let user = AppUser(email: email, password: password, name: nil, contactDetails: nil, paymentInfo: nil)
+                    let user = AppUser(email: email, password: password, name: self.currentUser?.name, contactDetails: nil, paymentInfo: nil)
                     self.saveUser(user: user)
                 }
                 self.fetchUserProfile()
                 self.fetchFavoritesFromFirestore()
                 completion(true, nil)
+             
             }
         }
     }
-    
-    func signUp(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(false, error.localizedDescription)
-            } else {
-                let user = AppUser(email: email, password: password, name: nil, contactDetails: nil, paymentInfo: nil)
-                self.saveUser(user: user)
-                self.fetchUserProfile()
-                self.fetchFavoritesFromFirestore()
-                completion(true, nil)
-            }
-        }
-    }
+
     
     func autoLogin() {
         if let savedUser = currentUser {
@@ -257,12 +265,14 @@ class AppViewModel: ObservableObject {
     }
     
     func addPurchase(purchase: Purchase) {
+        print("inside purchased function")
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
         let userPurchasesRef = db.collection("users").document(userId).collection("purchases")
         
         do {
             try userPurchasesRef.document(purchase.id).setData(from: purchase)
+            print("item purchased")
         } catch {
             print("Error adding purchase: \(error)")
         }
